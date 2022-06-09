@@ -9,13 +9,13 @@ arduino-cli core update-index --config-file arduino-cli.yaml
 arduino-cli core install esp32:esp32
 ```
 
-## Compiling
+## Compile
 
 ```bash
 arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso .
 ```
 
-## Uploading to the board
+## Upload to the board
 
 ```
 arduino-cli upload -p /dev/cu.usbserial-1310 --fqbn esp32:esp32:esp32-poe-iso .
