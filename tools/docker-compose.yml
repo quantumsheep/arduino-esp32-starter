@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  mosquitto:
+    container_name: "mosquitto"
+    image: "eclipse-mosquitto"
+    ports:
+      - 1883:1883
+      - 9002:9001
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-log:/mosquitto/log
+
+  node-red:
+    container_name: "node-red"
+    image: "nodered/node-red"
+    ports:
+      - 1880:1880
+    volumes:
+      - node-red-data:/data
+
+volumes:
+  mosquitto-data:
+  mosquitto-log:
+  node-red-data:

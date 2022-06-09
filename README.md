@@ -5,18 +5,29 @@ Using [Arduino CLI](https://arduino.github.io/arduino-cli).
 ## Download required libraries
 
 ```bash
-arduino-cli core update-index --config-file arduino-cli.yaml
-arduino-cli core install esp32:esp32
+make deps
 ```
 
 ## Compile
 
 ```bash
-arduino-cli compile --fqbn esp32:esp32:esp32-poe-iso .
+make build
 ```
 
 ## Upload to the board
 
+```bash
+make upload
 ```
-arduino-cli upload -p /dev/cu.usbserial-1310 --fqbn esp32:esp32:esp32-poe-iso .
+
+## Run Mosquitto and Node-RED
+
+```bash
+make tools-up
+```
+
+To stop the services, run:
+
+```bash
+make tools-down
 ```
